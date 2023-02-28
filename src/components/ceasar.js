@@ -2,14 +2,9 @@ import React, { useState } from "react";
 
 export const Ceasar = () =>{
     let COMMON_RES="Please input a string and a key, then press either action button to encrypt or decrypt"
-    let alphabet = 'abcdefghijklmnopqrstuvwxyz'
-    let alphabetArr = ['abcdefghijklmnopqrstuvwxyz']
     const [inputString, setInputString] = useState("")
     const [key, setKey] = useState(0)
     const [result, setResult] = useState(COMMON_RES)
-    const checkEmpty= ()=> {
-        if(inputString===""){}
-    }
     const encryptMethod=()=>{
         let newStringBuilder = ""
         let intKey = parseInt(key)
