@@ -9,18 +9,6 @@ export const Pomodoro = () => {
     const [isActive, setIsActive] = useState(false)
     const [isPaused, setIsPaused] = useState(true)
 
-    useEffect(() => {
-        let interval = null;
-        if (isActive && isPaused === false) {
-            interval = setInterval(handleCounter, 1000);
-        } else {
-            clearInterval(interval);
-        }
-        return () => {
-            clearInterval(interval);
-        };
-    }, [isActive, isPaused, workSecond, breakSecond, workMinute]);
-
     const handleCounter = () => {
         if (workMinute === 0 && workSecond === 0) {
             if(breakMinute === 0 && breakSecond === 0){
@@ -53,6 +41,20 @@ export const Pomodoro = () => {
         }
 
     }
+    
+    useEffect(() => {
+        let interval = null;
+        if (isActive && isPaused === false) {
+            interval = setInterval(handleCounter, 1000);
+        } else {
+            clearInterval(interval);
+        }
+        return () => {
+            clearInterval(interval);
+        };
+    }, [isActive, isPaused, workSecond, breakSecond, workMinute]);
+
+    
 
     const startTimer = () => {
         if (!isActive) {

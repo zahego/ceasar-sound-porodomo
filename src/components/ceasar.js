@@ -8,7 +8,7 @@ export const Ceasar = () =>{
     const encryptMethod=()=>{
         let newStringBuilder = ""
         let intKey = parseInt(key)
-        if (intKey===NaN){ return setResult('key must be a number')}
+        if (!isNaN(intKey)){ return setResult('key must be a number')}
         if (intKey === 27){ return setResult('key must be smaller than 27')}
         for(let i=0;i<inputString.length;i++){
             if((inputString[i].charCodeAt()>=65 && inputString[i].charCodeAt()<=(90-intKey))||(inputString[i].charCodeAt()>=97 && inputString[i].charCodeAt()<=(122-intKey))){
@@ -28,7 +28,7 @@ export const Ceasar = () =>{
     const decryptMethod=()=>{
         let newStringBuilder = ""
         let intKey = parseInt(key)
-        if (intKey===NaN){ return setResult('key must be a number')}
+        if (!isNaN(intKey)){ return setResult('key must be a number')}
         if (intKey === 27){ return setResult('key must be smaller than 27')}
         for(let i=0;i<inputString.length;i++){
             if((inputString[i].charCodeAt()>=65 && inputString[i].charCodeAt()<=(90-intKey))||(inputString[i].charCodeAt()>=97 && inputString[i].charCodeAt()<=(122-intKey))){
