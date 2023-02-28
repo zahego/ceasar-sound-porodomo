@@ -41,11 +41,11 @@ export const Pomodoro = () => {
         }
 
     }
-
+    
     useEffect(() => {
         let interval = null;
         if (isActive && isPaused === false) {
-            interval = setInterval(handleCounter(), 1000);
+            interval = setInterval(handleCounter, 1000);
         } else {
             clearInterval(interval);
         }
