@@ -11,15 +11,15 @@ export const Pomodoro = () => {
 
     const handleCounter = () => {
         if (workMinute === 0 && workSecond === 0) {
-            if(breakMinute === 0 && breakSecond === 0){
+            if (breakMinute === 0 && breakSecond === 0) {
                 setWorkMinute(25)
-                if(currentCycle<4){
-                setBreakMinute(5)
-                setCurrentCycle(currentCycle+1)
+                if (currentCycle < 3) {
+                    setBreakMinute(5)
+                    setCurrentCycle(currentCycle + 1)
                 }
-                else{
+                else {
                     setBreakMinute(30)
-                    setCurrentCycle(0)  
+                    setCurrentCycle(0)
                 }
             }
             else if (breakSecond > 0) {
@@ -41,7 +41,7 @@ export const Pomodoro = () => {
         }
 
     }
-    
+
     useEffect(() => {
         let interval = null;
         if (isActive && isPaused === false) {
@@ -54,7 +54,7 @@ export const Pomodoro = () => {
         };
     }, [isActive, isPaused, workSecond, breakSecond, workMinute]);
 
-    
+
 
     const startTimer = () => {
         if (!isActive) {
@@ -66,7 +66,7 @@ export const Pomodoro = () => {
         }
     }
     const pauseTimer = () => {
-        
+
         if (!isPaused) {
             setIsActive(false);
             setIsPaused(true);
@@ -82,7 +82,24 @@ export const Pomodoro = () => {
         setIsActive(false);
         setIsPaused(true);
         setCurrentCycle(0)
-
+        setWorkMinute(25);
+        setWorkSecond(0);
+        setBreakSecond(0);
+        setBreakMinute(5);
+    }
+    const stopCycleTimer = () => {
+        setIsActive(false);
+        setIsPaused(true);
+        setWorkMinute(25);
+        setWorkSecond(0);
+        setBreakSecond(0)
+        if(currentCycle<4){
+        setBreakMinute(5);
+        
+        }
+        else{
+            setBreakMinute(30);  
+        }
     }
 
 
@@ -91,14 +108,17 @@ export const Pomodoro = () => {
             <div id="leftPart">
                 <h2>Work</h2>
                 <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center' }}>
-                    <h1 id="workMinute">{workMinute}</h1><h1> : </h1><h1 id="workSecond">{workSecond}</h1>
+                    <h1 id="workMinute">{workMinute<10?0:null}{workMinute}</h1><h1> : </h1><h1 id="workSecond">{workSecond<10?0:null}{workSecond}</h1>
                 </div>
-                <button onClick={() => { startTimer() }}>Start</button>
+                {!isActive ?
+                    <button onClick={() => { startTimer() }}>Start</button> :
+                    <button onClick={() => { stopCycleTimer() }}>Stop Cycle</button>
+                }
             </div>
             <div id="middlePart">
                 <h2>Break</h2>
                 <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center' }}>
-                    <h1 id="breakMinute">{breakMinute}</h1><h1> : </h1><h1 id="breakSecond">{breakSecond}</h1>
+                    <h1 id="breakMinute">{breakMinute<10?0:null}{breakMinute}</h1><h1> : </h1><h1 id="breakSecond">{breakSecond<10?0:null}{breakSecond}</h1>
                 </div>
                 <button onClick={() => { pauseTimer() }}>Pause</button>
             </div>
