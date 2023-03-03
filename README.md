@@ -1,70 +1,59 @@
-# Getting Started with Create React App
+## Ceasar Sound and Porodomo
+[https://ceasar-pomodoro-sound-salad.netlify.app/](https://ceasar-pomodoro-sound-salad.netlify.app/)
+Quick mini projects built with Reactjs. 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Motivation
+Job interview
 
-## Available Scripts
 
-In the project directory, you can run:
+## Getting Started
+These instructions will guild you through the inital setting up process and 
+highlight what the apps can do for you to explore on your own.   
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Notable feature
+- Ceasar cipher encoding and decrypting
+- Pomodoro timer
+- Frequency calculation (coming soon)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Sections
+- Ceasar cipher section
+- Pomodoro timer section
+- Frequency calculation section
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Prerequisite
+Nodejs installed for local running purpose    
+check out Node installation instruction [here](https://nodejs.org/en/)  
 
-### `npm run build`
+## Installing and Running
+Clone the repo
+```
+$ git clone https://github.com/zahego/ceasar-sound-porodomo.git
+```
+Run Node command to create node_modules folder from the information in package.json, which hold all the necessary dependencies
+```
+$ npm install
+```
+Run Node command for local testing
+```
+$ npm run start
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Technoloies stack
+[React](https://reactjs.org/) - framework
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Some interesting issues along the way
+- trouble hosting on Netlify. Due to the podoromo handle counter method
+- trouble with setInterval in life cycle method useEffect. Issue was I create another setInterval method that override windows.setInterval. This is comedy gold
+- unable to figure out the sound frequency part. I have the solution of using p5.FFT, which utilize Fast Fourier Transformation to calculate frequency, but to translate that to rpm, I still have no clues
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## Contributors
+Minh Tran 
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## License
+This project is licensed under the MIT License
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Acknowledgments
+youtube videos and tutorials
