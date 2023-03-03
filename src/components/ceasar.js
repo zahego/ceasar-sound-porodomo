@@ -20,11 +20,11 @@ export const Ceasar = () => {
             else if ((inputString[i].charCodeAt() >= (90 - intKey + 1) && inputString[i].charCodeAt() <= 90) || (inputString[i].charCodeAt() >= (122 - intKey + 1) && inputString[i].charCodeAt() <= 122)) {
                 newStringBuilder += String.fromCharCode(parseInt(inputString[i].charCodeAt()) + intKey - 26)
             }
-            else if (parseInt(alphabetType)===1 && (inputString[i].charCodeAt() >= 48 && inputString[i].charCodeAt() <= (57 -(intKey % 10)))){
-                newStringBuilder += String.fromCharCode(parseInt(inputString[i].charCodeAt()) + (intKey % 10))
+            else if (parseInt(alphabetType)===1 && (inputString[i].charCodeAt() >= 48 && inputString[i].charCodeAt() <= (57 -(parseInt(key) % 10)))){
+                newStringBuilder += String.fromCharCode(parseInt(inputString[i].charCodeAt()) + (parseInt(key) % 10))
             }
-            else if (parseInt(alphabetType)===1 && (inputString[i].charCodeAt() >= (57 -(intKey % 10)+1) && inputString[i].charCodeAt() <= (57))){
-                newStringBuilder += String.fromCharCode(parseInt(inputString[i].charCodeAt()) + (intKey % 10)-10)
+            else if (parseInt(alphabetType)===1 && (inputString[i].charCodeAt() >= (57 -(parseInt(key) % 10)+1) && inputString[i].charCodeAt() <= (57))){
+                newStringBuilder += String.fromCharCode(parseInt(inputString[i].charCodeAt()) + (parseInt(key) % 10)-10)
             }
             else {
                 newStringBuilder += inputString[i]
@@ -48,11 +48,11 @@ export const Ceasar = () => {
             else if ((inputString[i].charCodeAt() >= (65 + intKey) && inputString[i].charCodeAt() <= 90) || (inputString[i].charCodeAt() >= (97 + intKey) && inputString[i].charCodeAt() <= 122)) {
                 newStringBuilder += String.fromCharCode(parseInt(inputString[i].charCodeAt()) - intKey)
             }
-            else if (parseInt(alphabetType)===1 && (inputString[i].charCodeAt() >= 48 && inputString[i].charCodeAt() <= (48 +(intKey % 10)-1))){
-                newStringBuilder += String.fromCharCode(parseInt(inputString[i].charCodeAt()) - (intKey % 10)+10)
+            else if (parseInt(alphabetType)===1 && (inputString[i].charCodeAt() >= 48 && inputString[i].charCodeAt() <= (48 +(parseInt(key) % 10)-1))){
+                newStringBuilder += String.fromCharCode(parseInt(inputString[i].charCodeAt()) - (parseInt(key) % 10)+10)
             }
-            else if (parseInt(alphabetType)===1 && (inputString[i].charCodeAt() >= (48 +(intKey % 10)) && inputString[i].charCodeAt() <= (57))){
-                newStringBuilder += String.fromCharCode(parseInt(inputString[i].charCodeAt()) - (intKey % 10))
+            else if (parseInt(alphabetType)===1 && (inputString[i].charCodeAt() >= (48 +(parseInt(key) % 10)) && inputString[i].charCodeAt() <= (57))){
+                newStringBuilder += String.fromCharCode(parseInt(inputString[i].charCodeAt()) - (parseInt(key) % 10))
             }
             
             else {
